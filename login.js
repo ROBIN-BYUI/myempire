@@ -26,11 +26,11 @@ function userlogin(){
     $.ajax({
         type: 'POST',
         url: '/login',
-        data: ' {"userName":"'+ userName +'", "password":"'+ password +'"}', // or JSON.stringify ({name: 'jonas'}),
+        data: ' {"userName":"'+ phoneNumber +'", "password":"'+ password +'"}', // or JSON.stringify ({name: 'jonas'}),
         success: function(data) {
             savetoken(data);
             localStorage.removeItem("customer");
-            window.location.href = "/timer.html";
+            window.location.href = "/timer.html#" + data;
          },
         contentType: "application/text",
         dataType: 'text'
